@@ -1,0 +1,36 @@
+<sup></sup>
+<span class="footnote" role="complementary">
+    <span class="footnote-counter"></span>
+    <span class="footnote-content"><slot /></span>
+</span>
+
+<style>
+    sup::after {
+        counter-increment: footnote;
+        content: counter(footnote);
+        color: var(--bloo);
+    }
+
+    .footnote-counter {
+        text-align: right;
+    }
+
+    .footnote-counter::before {
+        content: counter(footnote);
+        position: absolute;
+        left: calc(-3ch - 5px);
+        width: 3ch;
+        color: var(--bloo)
+    }
+    .footnote {
+        position: relative;
+        float: left;
+        clear: left;
+        width: calc(50% - 20px);
+        margin-left: -50%;
+        font-size: 14px;
+    }
+    .footnote-content {
+        opacity: 0.8;
+    }
+</style>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Status from "../components/Status.astro";
+import Col from "../components/Col.astro";
+const { title, description, status, planted, tended, tags } = Astro.props.frontmatter
+---
+
+<BaseLayout title={ title }>
+    <Col start={4} span={2}>
+        <Status status={ status } />
+        <h1>{ title }</h1>
+        { description && <p>{ description }</p> }
+        <hr>
+        
+        <article>
+            <slot />
+        </article>
+    </Col>
+</BaseLayout>
+

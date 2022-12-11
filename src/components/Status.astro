@@ -1,0 +1,14 @@
+---
+export interface Props {
+    status: string;
+}
+
+const { status } = Astro.props
+---
+<span>{ status }</span>
+
+<style>
+    span {
+        font-size: 14px;
+    }
+</style>

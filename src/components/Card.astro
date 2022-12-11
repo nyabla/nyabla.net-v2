@@ -1,0 +1,21 @@
+---
+export interface Props {
+    title: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props
+---
+
+<article>
+    <h1>{ title }</h1>
+    {description && <p>{ description }</p>}
+</article>
+
+<style>
+    article {
+        display: inline-block;
+        outline: 2px var(--bloo) solid;
+        box-shadow: -5px 5px var(--bloo);
+    }
+</style>
