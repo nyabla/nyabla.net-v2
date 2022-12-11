@@ -1,0 +1,19 @@
+---
+export interface Props {
+    start: number;
+    span: number;
+}
+
+const { start, span } = Astro.props;
+const end = start + span;
+---
+
+<div><slot /></div>
+
+<style define:vars={{ start, end }}>
+    div {
+        display: grid;
+        grid-column-start: var(--start);
+        grid-column-end: var(--end);
+    }
+</style>

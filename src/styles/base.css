@@ -1,0 +1,25 @@
+:root {
+    --pimk: #FFE0ED;
+    --peach: #FFEDE9;
+    --bloo: #353CEF;
+    --glurp: #9B0B48;
+    --green: #15D0A3;
+}
+
+html {
+    height: 100%;
+    background: linear-gradient(180deg, var(--pimk) 0%, var(--peach) 66.7%);
+}
+
+body {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+    font-family: 'Jost', 'Futura', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Londrina Solid', sans-serif;
+    color: var(--bloo);
+}
