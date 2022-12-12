@@ -11,3 +11,5 @@ Feel free to have a nosy around the code :3
 
 - [ ] implement backlinks
 - [ ] make usable on mobile and smaller screens
+- [ ] reactive type scale
+- [ ] css variables for consistent sizes
