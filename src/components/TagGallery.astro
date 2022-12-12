@@ -4,12 +4,13 @@ import PostGallery from "./PostGallery.astro"
 export interface Props {
     max?: number
     tag: string
+    exclude?: boolean
 }
 
-const { max, tag } = Astro.props
+const { max, tag, exclude } = Astro.props
 const posts = await Astro.glob('/src/pages/plant/*.mdx')
 const tagged = posts
-    .filter(post => post.frontmatter.tags.includes(tag))
+    .filter(post => (exclude === true) != post.frontmatter.tags.includes(tag))
     .sort((a, b) => {
         const dateA = new Date(a.frontmatter.tended || a.frontmatter.planted)
         const dateB = new Date(b.frontmatter.tended || b.frontmatter.planted)
