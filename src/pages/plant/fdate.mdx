@@ -1,7 +1,10 @@
 ---
 layout: ../../layouts/Post.astro
 title: fdate
-status: blooming
+description: making of the silly command line utility
+status: bloom
+tags: [project, rust, silly]
+planted: 2022-07-22
 ---
 import Footnote from '../../components/Footnote.astro'
 
@@ -23,11 +26,13 @@ but I just couldn't get it to spit out the correct numbers so I got back on the
 research grind. I managed to stumble across a general algorithm for converting
 between julian dates to arbitrary calendars and back.<Footnote>
 *Generalized Equations for Julian Day Numbers and Calendar Dates* (1985)
-    by D. A. Hatcher is available online from the [astrophysics data system](https://ui.adsabs.harvard.edu/abs/1985QJRAS..26..151H")</Footnote>
+    by D. A. Hatcher is available online from the [astrophysics data system](https://ui.adsabs.harvard.edu/abs/1985QJRAS..26..151H)</Footnote>
 This led me on a search to find the coefficients for the french republican calendar which, surprisingly,
 existed<Footnote>*Additif to 'Generalized Equations for Julian Day Numbers and Calendar Dates'*
 (1986) by J. P. Parisot is also available online from the
 [astrophysics data system](https://ui.adsabs.harvard.edu/abs/1986QJRAS..27Q.506P)</Footnote>
 so I was saved and could finish off my silly little project.
 
-I did end up using good ol' Meeus for calculating the julian date and did some simple maths to convert the time into decimal time. Also I yoinked Don Knuth's roman numeral implementation from tex.web lol.
+I did end up using good ol' Meeus for calculating the julian date and did some
+simple maths to convert the time into decimal time. Also I yoinked Don Knuth's
+roman numeral implementation from tex.web lol.

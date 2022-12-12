@@ -1,0 +1,41 @@
+---
+import LilNyabla from "../../components/LilNyabla.astro"
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Col from "../../components/Col.astro"
+import TagGallery from "../../components/TagGallery.astro"
+
+interface Frontmatter {
+    tags?: string[]
+    title: string
+    description?: string
+    status: string
+    planted: string
+    tended?: string
+}
+
+export async function getStaticPaths() {
+    const plants = await Astro.glob<Frontmatter>('/src/pages/plant/*.mdx')
+    
+    let tags = new Set()
+    plants.forEach(plant => {
+        plant.frontmatter.tags?.forEach(tag => tags.add(tag))
+    })
+
+    const tagsArray = [...tags]
+    return tagsArray.map(tag => {
+        return { params: { tag } }
+    })
+}
+
+const { tag } = Astro.params
+---
+<BaseLayout title={ "tagged: " + tag }>
+    <LilNyabla />
+    <Col start={4} span={2}>
+        <div class="big-space"></div>
+        <h1>{ tag }</h1>
+    </Col>
+    <Col start={3} span={3}>
+        <TagGallery tag={ tag } />
+    </Col>
+</BaseLayout>

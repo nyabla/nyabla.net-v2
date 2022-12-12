@@ -5,10 +5,16 @@ export interface Props {
 
 const { status } = Astro.props
 ---
-<span>{ status }</span>
+<span><img src={ `/status-icons/${status}.svg` } /> { status }</span>
 
 <style>
     span {
         font-size: 14px;
+    }
+
+    img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
     }
 </style>

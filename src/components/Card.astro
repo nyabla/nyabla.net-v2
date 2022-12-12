@@ -1,21 +1,58 @@
 ---
+import Date from './Date.astro'
+import Status from './Status.astro'
+
 export interface Props {
-    title: string;
-    description?: string;
+    title: string
+    description?: string
+    status: string
+    tended: string
+    url: string
 }
 
-const { title, description } = Astro.props
+const { title, description, status, tended, url } = Astro.props
 ---
-
+<a href={ url }>
 <article>
-    <h1>{ title }</h1>
-    {description && <p>{ description }</p>}
+    <Status status={ status } />
+    <p class="title">{ title }</p>
+    {description && <p class="desc">{ description }</p>}
+    <span class="date">last tended: <Date date={ tended } /></span>
 </article>
+</a>
 
 <style>
+    a {
+        text-decoration: none;
+        display: flex;
+    }
+
     article {
-        display: inline-block;
-        outline: 2px var(--bloo) solid;
-        box-shadow: -5px 5px var(--bloo);
+        display: block;
+        outline: 3px var(--bloo) solid;
+        box-shadow: -7px 7px var(--bloo);
+        padding: 10px 10px 40px 10px;
+        position: relative;
+        color: black;
+        flex-grow: 1;
+    }
+
+    .title {
+        color: var(--bloo);
+        font-family: 'Londrina Solid', sans-serif;
+        font-size: 32px;
+        margin: 0;
+    }
+
+    .desc {
+        font-style: italic;
+        margin: 0;
+    }
+
+    .date {
+        font-size: 14px;
+        opacity: 0.6;
+        position: absolute;
+        bottom: 10px;
     }
 </style>

@@ -1,0 +1,28 @@
+---
+import Card from './Card.astro';
+
+export interface Props {
+    posts: any[]
+}
+// posts is an array of MDX instances. I cba doing the ts stuff
+const { posts } = Astro.props
+---
+<div class="gallery">
+    {posts.map(post =>
+    <Card
+        title={ post.frontmatter.title }
+        description={ post.frontmatter.description }
+        status={ post.frontmatter.status }
+        tended={ post.frontmatter.tended || post.frontmatter.planted }
+        url={post.url}
+    />)}
+</div>
+
+<style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 10px;
+    }
+</style>

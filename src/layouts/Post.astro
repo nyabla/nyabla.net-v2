@@ -2,19 +2,70 @@
 import BaseLayout from "./BaseLayout.astro";
 import Status from "../components/Status.astro";
 import Col from "../components/Col.astro";
+import LilNyabla from "../components/LilNyabla.astro";
+import Date from "../components/Date.astro";
 const { title, description, status, planted, tended, tags } = Astro.props.frontmatter
 ---
-
+<LilNyabla />
 <BaseLayout title={ title }>
     <Col start={4} span={2}>
-        <Status status={ status } />
+        <div class="big-space">
+        { status && <Status status={ status } /> }
         <h1>{ title }</h1>
-        { description && <p>{ description }</p> }
+        { description && <p class="desc">{ description }</p> }
         <hr>
-        
+
+        <div class="info">
+            <Col start={1} span={1}>
+                { tags && <ul>{ tags.map(tag => <li class="tag"><a href={ "/tagged/" + tag }>{ tag }</a></li>) }</ul> }
+            </Col>
+
+            <Col start={2} span={1}>
+                <span>planted: <Date date={ planted } /></span>
+                <span>last tended: <Date date={ tended || planted } /></span>
+            </Col>
+        </div>
+
         <article>
             <slot />
         </article>
+    </div>
     </Col>
 </BaseLayout>
 
+<style>
+    .desc {
+        font-style: italic;
+        opacity: 0.6;
+        margin: 0;
+    }
+
+    .info {
+        display: grid;
+        grid-template-columns: repeat(1fr, 2);
+        column-gap: 20px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .info ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .info li {
+        margin-right: 1ch;
+    }
+
+    .info a {
+        text-decoration: none;
+    }
+
+    .info span {
+        opacity: 0.6;
+        margin-bottom: 10px;
+    }
+</style>

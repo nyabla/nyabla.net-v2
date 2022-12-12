@@ -1,0 +1,16 @@
+---
+import PostGallery from "./PostGallery.astro"
+
+export interface Props {
+    max?: number
+}
+
+const { max } = Astro.props
+const posts = await Astro.glob('/src/pages/plant/*.mdx')
+const recent = posts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.tended || a.frontmatter.planted)
+    const dateB = new Date(b.frontmatter.tended || b.frontmatter.planted)
+    return dateB.valueOf() - dateA.valueOf()
+}).slice(0, max || posts.length)
+---
+<PostGallery posts={ recent } />

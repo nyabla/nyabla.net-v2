@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    margin: 20px;
+    margin: 40px 20px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: 20px;
@@ -28,8 +28,27 @@ body {
 h1, h2, h3 {
     font-family: 'Londrina Solid', sans-serif;
     color: var(--bloo);
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 64px;
+    margin: 0;
+}
+
+hr {
+    border: 1px solid black;
+    width: 100%;
+}
+
+p {
+    margin-top: 0;
 }
 
 a {
     color: var(--glurp);
+}
+
+.big-space {
+    margin-top: 100px;
 }

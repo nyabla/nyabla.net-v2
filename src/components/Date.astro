@@ -1,0 +1,8 @@
+---
+export interface Props {
+    date: string
+}
+const { date } = Astro.props
+const dateOnly = date.substring(0, 10)
+---
+<time datetime={ dateOnly }>{ dateOnly }</time>
