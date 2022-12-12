@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="8"
+   height="13.363181"
+   viewBox="0 0 8 13.363181"
+   version="1.1"
+   id="svg6327"
+   sodipodi:docname="bullet.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="6.359375"
+     inkscape:cx="-21.936118"
+     inkscape:cy="17.690418"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6327" />
+  <defs
+     id="defs6324" />
+  <g
+     id="layer1"
+     transform="matrix(0,-0.24999998,0.24999998,0,-3.9999994,14.68159)"
+     style="stroke-width:4">
+    <g
+       id="g1358-5"
+       transform="translate(-9.9999998,5.999999)"
+       style="fill:#15d0a3;fill-opacity:1;stroke-width:4">
+      <path
+         style="fill:#15d0a3;fill-opacity:1;stroke:none;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 16.981392,22.048326 C 26.671502,9.897312 42,42 42,42 42,42 7.2912813,34.19934 16.981392,22.048326 Z"
+         id="path1346-0" />
+      <path
+         style="fill:#15d0a3;fill-opacity:1;stroke:none;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 42,10 c 15.541725,0 0,32.000002 0,32.000002 C 42,42.000002 26.45827,10 42,10 Z"
+         id="path1352-0" />
+      <path
+         style="fill:#15d0a3;fill-opacity:1;stroke:none;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 67.018607,22.048322 C 76.70872,34.199342 42,42.000002 42,42.000002 c 0,0 15.328497,-32.1026902 25.018607,-19.95168 z"
+         id="path1356-1" />
+    </g>
+  </g>
+</svg>
