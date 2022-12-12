@@ -9,5 +9,5 @@ Feel free to have a nosy around the code :3
 
 ## todo
 
--[ ] implement backlinks
--[ ] make usable on mobile and smaller screens
+- [ ] implement backlinks
+- [ ] make usable on mobile and smaller screens
