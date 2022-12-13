@@ -1,0 +1,16 @@
+---
+import LilNyabla from "../../components/LilNyabla.astro"
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Col from "../../components/Col.astro"
+import RecentGallery from "../../components/RecentGallery.astro";
+---
+<BaseLayout title="plants">
+    <LilNyabla />
+    <Col start={4} span={2}>
+        <div class="big-space"></div>
+        <h1>all the plants evar</h1>
+    </Col>
+    <Col start={3} span={3}>
+        <RecentGallery />
+    </Col>
+</BaseLayout>
