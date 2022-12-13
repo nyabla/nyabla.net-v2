@@ -1,0 +1,41 @@
+---
+import LilNyabla from "../../components/LilNyabla.astro"
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import Col from "../../components/Col.astro"
+import TagGallery from "../../components/TagGallery.astro"
+
+interface Frontmatter {
+    tags?: string[]
+    title: string
+    description?: string
+    status: string
+    planted: string
+    tended?: string
+}
+
+const plants = await Astro.glob<Frontmatter>('/src/pages/plant/*.mdx')
+let tags = {}
+plants.forEach(plant => {
+    plant.frontmatter.tags?.forEach(tag => {
+        if (tag in tags) {
+            tags[tag] += 1
+        } else {
+            tags[tag] = 1
+        }
+    })
+})
+// primary sort is tag count, secondary/tiebreaker is alphabetical
+const orderedTags = Object.keys(tags).sort().sort((a, b) => tags[b] - tags[a])
+---
+<BaseLayout title="tag index">
+    <LilNyabla />
+    <Col start={4} span={2}>
+        <div class="big-space"></div>
+        <h1>index of tags</h1>
+    </Col>
+    <Col start={4} span={2}>
+        <ul>
+            {orderedTags.map(tag => <li><a href={ "/tagged/" + tag }>{ tag } ({ tags[tag] } plant{ tags[tag] > 1 && "s" })</a></li>)}
+        </ul>
+    </Col>
+</BaseLayout>
