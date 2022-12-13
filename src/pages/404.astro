@@ -1,0 +1,15 @@
+---
+import LilNyabla from "../components/LilNyabla.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Col from "../components/Col.astro"
+---
+<BaseLayout title="oopsie woopsie">
+    <LilNyabla />
+    <Col start={4} span={2}>
+        <div class="big-space"></div>
+        <h1>404</h1>
+    </Col>
+    <Col start={4} span={2}>
+        <p>there's nothing here!</p>
+    </Col>
+</BaseLayout>
