@@ -10,7 +10,6 @@
 }
 
 html {
-    height: 100%;
     background: linear-gradient(180deg, var(--pimk) 0%, var(--peach) 66.7%) var(--peach);
     background-repeat: no-repeat;
 }
